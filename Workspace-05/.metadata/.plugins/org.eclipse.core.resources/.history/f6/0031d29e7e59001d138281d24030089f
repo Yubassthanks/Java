@@ -1,0 +1,13 @@
+package aplicacoes;
+
+public class Vacina {
+
+	private String nomePet;
+	private String veterinario;
+	private String nomeVacina;
+	private Date data;
+	
+	
+	
+	
+}

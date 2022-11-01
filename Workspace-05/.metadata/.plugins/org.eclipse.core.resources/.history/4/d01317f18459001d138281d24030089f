@@ -1,0 +1,18 @@
+package aplicacoes;
+
+import java.util.Scanner;
+
+public class Main {
+
+	static Scanner scan = new Scanner(System.in);
+	static ArrayList<Vacina> vacinas = new ArrayList<>();
+	static int menu = 0;
+	
+	
+	
+	public static void main(String[] args) {
+	
+		
+	}
+
+}
