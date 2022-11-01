@@ -3,7 +3,6 @@ package aplicacoes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Main {
 
 	static Scanner scan = new Scanner(System.in);
@@ -23,16 +22,20 @@ public class Main {
 			menu = scan.nextInt();
 			switch (menu) {
 			case 1:
-				System.out.println("Nome do pet\tNome do veterinario\tNome da vacina\thora");
+				System.out.println("\n1. Nome do pet\tNome do veterinario\tNome da vacina\thora");
 				create();
 				break;
 			case 2:
-				System.out.println("Nome do pet\tNome do veterinario\tNome da vacina");
+				System.out.println("2. Nome do pet\tNome do veterinario\tNome da vacina:");
 				read();
 				break;
 			case 3:
+				System.out.println("Digite o item que sera alterado: ");
+				update(scan.nextInt());
 				break;
 			case 4:
+				System.out.println("4. Excluir o registro.");
+				delete(scan.nextInt());
 				break;
 			case 5:
 				break;
@@ -42,11 +45,13 @@ public class Main {
 				break;
 			case 8:
 				break;
-
+			default:
+				System.out.println("Opcao invalida.");
+				break;
 			}
 		}
-
 	}
+
 	public static void create() {
 		Vacina vac = new Vacina();
 		vac.setNomePet(scan.next());
@@ -54,9 +59,34 @@ public class Main {
 		vac.setNomeVacina(scan.next());
 		vacinas.add(vac);
 	}
+
 	public static void read() {
-		for(Vacina vac: vacinas) {
+		for (Vacina vac : vacinas)
 			System.out.println(vac.toString());
-		}
 	}
+
+	public static void update(int update) {
+		if (update >= 0 && update < vacinas.size()) {
+			System.out.println(vacinas.get(update).toString());
+			Vacina vac = new Vacina();
+			vac.setNomePet(scan.next());
+			vac.setVeterinario(scan.next());
+			vac.setNomeVacina(scan.next());
+			vacinas.set(update, vac);
+			System.out.println("Venda excluida.");
+		} else
+			System.out.println("Item invalido");
+	}
+
+	public static void delete(int update) {
+		if (update >= 0 && update < vacinas.size()) {
+			vacinas.remove(update);
+			System.out.println("Venda excluida.");
+		} else
+			System.out.println("Item invalido");
+		
+	}
+
 }
+	
+

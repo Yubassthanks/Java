@@ -1,0 +1,71 @@
+package aplicacoes;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Main {
+
+	static Scanner scan = new Scanner(System.in);
+	static ArrayList<Vacina> vacinas = new ArrayList<>();
+	static int menu = 0;
+
+	public static void main(String[] args) {
+		while (menu != 8) {
+			System.out.println("\n1. Cadastrar vacina");
+			System.out.println("2. Ver a lista");
+			System.out.println("3. Alterar dados do pet");
+			System.out.println("4. Excluir registro");
+			System.out.println("5. Buscar por pet");
+			System.out.println("6. Buscar por veterinario");
+			System.out.println("7. Buscar por vacina");
+			System.out.println("8. Encerrar o programa");
+			menu = scan.nextInt();
+			switch (menu) {
+			case 1:
+				System.out.println("\n1. Nome do pet\tNome do veterinario\tNome da vacina\thora");
+				create();
+				break;
+			case 2:
+				System.out.println("2. Nome do pet\tNome do veterinario\tNome da vacina");
+				read();
+				break;
+			case 3:
+				break;
+			case 4:
+				System.out.println("4. Excluir o registro.")
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+
+			}
+		}
+
+	}
+	public static void create() {
+		Vacina vac = new Vacina();
+		vac.setNomePet(scan.next());
+		vac.setVeterinario(scan.next());
+		vac.setNomeVacina(scan.next());
+		vacinas.add(vac);
+	}
+	public static void read() {
+		for(Vacina vac: vacinas) 
+			System.out.println(vac.toString());
+		}
+	public static void delete (int update) {
+		if(update >= 0 && update < vacinas.size()) {
+			vacinas.remove(update);
+			System.out.println("Vebda excluida.");
+		}else
+			System.out.println("Item invalido");
+		}
+	}
+
+

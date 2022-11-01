@@ -1,46 +1,53 @@
 package aplicacoes;
 
 //import date pra validar char
-import java.util.Date;
+
+import java.util.Calendar;
 
 public class Vacina {
 
 	private String nomePet;
 	private String veterinario;
 	private String nomeVacina;
-	private Date data;
-	
+	private Calendar calendario;
+
+		
 	public String getNomePet() {
 		return nomePet;
 	}
+
 	public void setNomePet(String nomePet) {
 		this.nomePet = nomePet;
 	}
+
 	public String getVeterinario() {
 		return veterinario;
 	}
+
 	public void setVeterinario(String veterinario) {
 		this.veterinario = veterinario;
 	}
+
 	public String getNomeVacina() {
 		return nomeVacina;
 	}
+
 	public void setNomeVacina(String nomeVacina) {
 		this.nomeVacina = nomeVacina;
 	}
-	public Date getData() {
-		return data;
+
+	public Calendar getCalendario() {
+		return calendario;
 	}
-	public void setData(Date data) {
-		this.data = data;
+
+	public void setCalendario(Calendar calendario) {
+		this.calendario = calendario;
 	}
+
 	@Override
 	public String toString() {
-		return String.format("%s\t%s\t%s\t %d", nomePet, veterinario, nomeVacina, data);
-		
+		return String.format("%s\t%s\t%s\t ", nomePet, veterinario, nomeVacina);
+
 	}
-	
-	
-	
-	
+
 }
