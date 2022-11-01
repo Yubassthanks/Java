@@ -1,0 +1,11 @@
+package modelo;
+
+public class Venda {
+
+	//ATRIBUTOS ENCAPSULADOS
+	private String produto;
+	private int quantidade;
+	private float preco;
+	
+	
+}
